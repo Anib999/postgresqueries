@@ -1,1 +1,17 @@
-SELECT name || ' ' || address AS "name address" FROM base_company
+//AS alias, || concat
+1. SELECT name || ' ' || address AS "name address" FROM base_company
+// user "" for names with spaces
+
+//DESC || ASC
+2. SELECT name FROM base_company ORDER BY name DESC
+//for multiple
+3. SELECT * FROM base_company ORDER BY name DESC, address ASC;
+
+//The LENGTH() function accepts a string and returns the length of that string.
+4. SELECT name, LENGTH(name) AS na FROM base_company
+
+// na can directly be accessed
+5. SELECT name, LENGTH(name) AS na FROM base_company ORDER BY na DESC
+
+// ORDER BY sort_expression [ASC | DESC] [NULLS FIRST | NULLS LAST]
+

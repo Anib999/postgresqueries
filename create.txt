@@ -1,0 +1,4 @@
+//normal create table
+1. CREATE TABLE sort_demo (
+	num INT
+);

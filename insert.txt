@@ -1,0 +1,5 @@
+// normal insertion
+1. INSERT INTO base_company(name, address) VALUES('chic', 'New')
+
+// multiple insertion
+2. INSERT INTO sort_demo(num) VALUES (1),(2),(3),(4),(null);

@@ -2,3 +2,9 @@
 1. CREATE TABLE sort_demo (
 	num INT
 );
+
+2. CREATE TABLE distinct_demo (
+	id serial NOT NULL PRIMARY KEY,
+	bcolor VARCHAR,
+	fcolor VARCHAR
+)

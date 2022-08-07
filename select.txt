@@ -15,3 +15,26 @@
 
 // ORDER BY sort_expression [ASC | DESC] [NULLS FIRST | NULLS LAST]
 
+// The DISTINCT clause is used in the SELECT statement to remove duplicate rows from a result set.
+6. SELECT DISTINCT bcolor, fcolor FROM distinct_demo ORDER BY bcolor, fcolor;
+
+//DISTINCT with ON
+7. SELECT DISTINCT ON (bcolor) bcolor, fcolor FROM distinct_demo ORDER BY bcolor, fcolor;
+
+// use '' on after where
+8. SELECT name FROM base_company WHERE name = 'anib';
+
+//same operator OR , AND
+9. SELECT * FROM base_company WHERE name = 'anib' OR address = 'New';
+
+// cases needs to be matched
+10. SELECT * FROM base_company WHERE name in ('anib', 'chic');
+
+// in (%) followed by string
+11. SELECT * FROM base_company WHERE name LIKE'ani%';
+
+//length function with between
+12. SELECT name, LENGTH(name) name_len FROM base_company WHERE LENGTH(name) BETWEEN 2 AND 3;
+
+//<> == !=
+13. SELECT name from base_company WHERE name LIKE 'an%' AND name <> 'chic'

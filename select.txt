@@ -38,3 +38,18 @@
 
 //<> == !=
 13. SELECT name from base_company WHERE name LIKE 'an%' AND name <> 'chic'
+
+// limit  limits the data returned null returns all
+14. SELECT * FROM distinct_demo LIMIT 6
+
+// offset offsets the data
+15. SELECT * FROM distinct_demo LIMIT 6 OFFSET 2
+
+//note limit is not sql standard, fetch is sql standard introduced in 2008 sql
+16. SELECT * FROM distinct_demo FETCH FIRST ROW ONLY
+
+//select 6 rows
+17. SELECT * FROM distinct_demo FETCH FIRST 6 ROW ONLY
+
+// offset specified rows
+18. SELECT * FROM distinct_demo OFFSET 2 ROWS FETCH FIRST 6 ROW ONLY

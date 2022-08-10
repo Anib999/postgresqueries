@@ -53,3 +53,12 @@
 
 // offset specified rows
 18. SELECT * FROM distinct_demo OFFSET 2 ROWS FETCH FIRST 6 ROW ONLY
+
+//in
+19. SELECT * FROM distinct_demo WHERE id IN (1,2)
+
+//OR
+20. SELECT * FROM distinct_demo WHERE id = 1 OR id = 3
+
+//not in or <> 
+21. SELECT * FROM distinct_demo WHERE id NOT IN (1,2)

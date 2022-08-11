@@ -1,0 +1,5 @@
+//alter table to add column
+ALTER TABLE sort_demo ADD COLUMN created_date TIMESTAMP;
+
+//alter table to alter column
+ALTER TABLE sort_demo ALTER COLUMN created_date SET NOT NULL;

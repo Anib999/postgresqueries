@@ -62,3 +62,12 @@
 
 //not in or <> 
 21. SELECT * FROM distinct_demo WHERE id NOT IN (1,2)
+
+// BETWEEN
+22. SELECT * FROM sort_demo WHERE num BETWEEN 1 AND 3
+
+//NOT BETWEEN
+23. SELECT * FROM sort_demo WHERE num NOT BETWEEN 1 AND 3
+
+//IMPORTANT SELECT USING DATE
+24. SELECT * FROM sort_demo WHERE created_date BETWEEN '2022-08-11' AND '2022-08-19'; 

@@ -8,3 +8,13 @@
 	bcolor VARCHAR,
 	fcolor VARCHAR
 )
+
+3. CREATE TABLE basket_a (
+    a INT PRIMARY KEY,
+    fruit_a VARCHAR (100) NOT NULL
+);
+
+4. CREATE TABLE basket_b (
+    b INT PRIMARY KEY,
+    fruit_b VARCHAR (100) NOT NULL
+);

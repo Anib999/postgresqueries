@@ -71,3 +71,42 @@
 
 //IMPORTANT SELECT USING DATE
 24. SELECT * FROM sort_demo WHERE created_date BETWEEN '2022-08-11' AND '2022-08-19'; 
+
+//IMPORTANT joins
+//inner join
+26. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+INNER JOIN basket_b
+    ON fruit_a = fruit_b;
+//The inner join examines each row in the first table (basket_a). It compares the value in the fruit_a column with the value in the fruit_b column of each row in the second table (basket_b). If these values are equal, the inner join creates a new row that contains columns from both tables and adds this new row the result set.
+
+//left join
+27. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+LEFT JOIN basket_b 
+   ON fruit_a = fruit_b;
+//The left join starts selecting data from the left table. It compares values in the fruit_a column with the values in the fruit_b column in the basket_b table.
+
+//is null ONLY
+28. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+LEFT JOIN basket_b 
+    ON fruit_a = fruit_b
+WHERE b IS NULL;
+// Note that the LEFT JOIN is the same as the LEFT OUTER JOIN so you can use them interchangeably.
+

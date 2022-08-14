@@ -110,3 +110,59 @@ LEFT JOIN basket_b
 WHERE b IS NULL;
 // Note that the LEFT JOIN is the same as the LEFT OUTER JOIN so you can use them interchangeably.
 
+// If these values are equal, the right join creates a new row that contains columns from both tables.
+29. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+RIGHT JOIN basket_b ON fruit_a = fruit_b;
+
+// for null values
+30. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+RIGHT JOIN basket_b 
+   ON fruit_a = fruit_b
+WHERE a IS NULL;
+//The RIGHT JOIN and RIGHT OUTER JOIN are the same therefore you can use them interchangeably.
+
+//full outer join
+31. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+FULL OUTER JOIN basket_b 
+    ON fruit_a = fruit_b;
+
+//for null
+32. SELECT
+    a,
+    fruit_a,
+    b,
+    fruit_b
+FROM
+    basket_a
+FULL JOIN basket_b 
+   ON fruit_a = fruit_b
+WHERE a IS NULL OR b IS NULL;
+
+
+// table alias
+SELECT
+    e.first_name employee,
+    m .first_name manager
+FROM
+    employee e
+INNER JOIN employee m 
+    ON m.employee_id = e.manager_id
+ORDER BY manager;

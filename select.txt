@@ -158,7 +158,7 @@ WHERE a IS NULL OR b IS NULL;
 
 
 // table alias
-SELECT
+33. SELECT
     e.first_name employee,
     m .first_name manager
 FROM
@@ -166,3 +166,45 @@ FROM
 INNER JOIN employee m 
     ON m.employee_id = e.manager_id
 ORDER BY manager;
+
+//inner join detail
+34. SELECT
+	customer.customer_id,
+	first_name,
+	last_name,
+	amount,
+	payment_date
+FROM
+	customer
+INNER JOIN payment 
+    ON payment.customer_id = customer.customer_id
+ORDER BY payment_date;
+
+//using using
+35. SELECT
+	customer_id,
+	first_name,
+	last_name,
+	amount,
+	payment_date
+FROM
+	customer
+INNER JOIN payment USING(customer_id)
+ORDER BY payment_date;	
+
+//joining three or more tables using alias
+36. SELECT
+	c.customer_id,
+	c.first_name customer_first_name,
+	c.last_name customer_last_name,
+	s.first_name staff_first_name,
+	s.last_name staff_last_name,
+	amount,
+	payment_date
+FROM
+	customer c
+INNER JOIN payment p 
+    ON p.customer_id = c.customer_id
+INNER JOIN staff s 
+    ON p.staff_id = s.staff_id
+ORDER BY payment_date;

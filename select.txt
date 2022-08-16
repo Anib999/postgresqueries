@@ -208,3 +208,49 @@ INNER JOIN payment p
 INNER JOIN staff s 
     ON p.staff_id = s.staff_id
 ORDER BY payment_date;
+
+// left join
+37. SELECT
+	pka,
+	c1,
+	pkb,
+	c2
+FROM
+	A
+LEFT JOIN B ON pka = fka;
+
+//
+38. SELECT
+	film.film_id,
+	title,
+	inventory_id
+FROM
+	film
+LEFT JOIN inventory 
+    ON inventory.film_id = film.film_id
+ORDER BY title;
+
+//using using
+39. SELECT
+	f.film_id,
+	title,
+	inventory_id
+FROM
+	film f
+LEFT JOIN inventory i USING (film_id)
+WHERE i.film_id IS NULL
+ORDER BY title;
+
+//right jion details
+40. Select review, title from films right join film_reviews on film_reviews.film_id = films.film_id
+
+//using using
+41. SELECT review, title
+FROM films
+RIGHT JOIN film_reviews USING (film_id);
+
+//null 
+42. SELECT review, title
+FROM films
+RIGHT JOIN film_reviews using (film_id)
+WHERE title IS NULL;

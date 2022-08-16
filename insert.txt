@@ -17,3 +17,14 @@ VALUES
     (2, 'Apple'),
     (3, 'Watermelon'),
     (4, 'Pear');
+
+5. INSERT INTO films(title)
+VALUES('Joker'),
+      ('Avengers: Endgame'),
+      ('Parasite');
+    
+6. INSERT INTO film_reviews(film_id, review)
+VALUES(1, 'Excellent'),
+      (1, 'Awesome'),
+      (2, 'Cool'),
+      (NULL, 'Beautiful');

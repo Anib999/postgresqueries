@@ -288,3 +288,8 @@ FROM
 INNER JOIN film f2 
     ON f1.film_id <> f2.film_id AND 
        f1.length = f2.length;
+
+//outer join
+47. select employee_name, department_name from employees e full outer join departments d on d.department_id = e.department_id where employee_name is null;
+
+48. select employee_name, department_name from employees e full outer join departments d on d.department_id = e.department_id where department_name is null;

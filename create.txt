@@ -39,3 +39,14 @@
 	REFERENCES employee (employee_id) 
 	ON DELETE CASCADE
 );
+
+8. CREATE TABLE departments (
+	department_id serial PRIMARY KEY,
+	department_name VARCHAR (255) NOT NULL
+);
+
+9. CREATE TABLE employees (
+	employee_id serial PRIMARY KEY,
+	employee_name VARCHAR (255),
+	department_id INTEGER
+);

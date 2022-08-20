@@ -293,3 +293,30 @@ INNER JOIN film f2
 47. select employee_name, department_name from employees e full outer join departments d on d.department_id = e.department_id where employee_name is null;
 
 48. select employee_name, department_name from employees e full outer join departments d on d.department_id = e.department_id where department_name is null;
+
+//cross join
+49. SELECT select_list
+FROM T1
+CROSS JOIN T2;
+
+//is equal to 
+SELECT select_list
+FROM T1, T2;
+
+//similar
+SELECT *
+FROM T1
+INNER JOIN T2 ON true;
+
+// cross join
+50. SELECT *
+FROM T1
+CROSS JOIN T2;
+
+//natural join
+51. SELECT * FROM products
+NATURAL JOIN categories;
+
+// above is equal to following
+52. SELECT	* FROM products
+INNER JOIN categories USING (category_id);

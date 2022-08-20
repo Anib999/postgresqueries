@@ -50,3 +50,23 @@
 	employee_name VARCHAR (255),
 	department_id INTEGER
 );
+
+10. DROP TABLE IF EXISTS T1;
+CREATE TABLE T1 (label CHAR(1) PRIMARY KEY);
+
+11. DROP TABLE IF EXISTS T2;
+CREATE TABLE T2 (score INT PRIMARY KEY);
+
+12. DROP TABLE IF EXISTS categories;
+CREATE TABLE categories (
+	category_id serial PRIMARY KEY,
+	category_name VARCHAR (255) NOT NULL
+);
+
+13. DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+	product_id serial PRIMARY KEY,
+	product_name VARCHAR (255) NOT NULL,
+	category_id INT NOT NULL,
+	FOREIGN KEY (category_id) REFERENCES categories (category_id)
+);

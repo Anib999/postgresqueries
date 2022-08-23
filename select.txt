@@ -328,3 +328,23 @@ FROM
    payment
 GROUP BY
    customer_id;
+
+// aggreate function sum is affreate
+54. SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id;
+
+//sum
+55. SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+ORDER BY
+	SUM (amount) DESC;

@@ -390,3 +390,28 @@ FROM
 	payment
 GROUP BY
 	DATE(payment_date);
+
+// having basic
+60. SELECT
+	column1,
+	aggregate_function (column2)
+FROM
+	table_name
+GROUP BY
+	column1
+HAVING
+	condition;
+
+// note column alias cannot be used on having as having comes before select
+https://www.postgresqltutorial.com/wp-content/uploads/2020/07/PostgreSQL-Having-1.png
+
+// simple
+61. SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+HAVING
+	SUM (amount) > 200;

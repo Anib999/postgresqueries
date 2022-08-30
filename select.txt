@@ -415,3 +415,26 @@ GROUP BY
 	customer_id
 HAVING
 	SUM (amount) > 200;
+
+//UNION query
+62. SELECT select_list_1
+FROM table_expresssion_1
+UNION
+SELECT select_list_2
+FROM table_expression_2
+
+//union remove duplicate data
+63. SELECT * FROM top_rated_films
+UNION
+SELECT * FROM most_popular_films;
+
+//all gives all data
+64. SELECT * FROM top_rated_films
+UNION ALL
+SELECT * FROM most_popular_films;
+
+//with order by
+65. SELECT * FROM top_rated_films
+UNION ALL
+SELECT * FROM most_popular_films
+ORDER BY title;

@@ -70,3 +70,15 @@ CREATE TABLE products (
 	category_id INT NOT NULL,
 	FOREIGN KEY (category_id) REFERENCES categories (category_id)
 );
+
+14. DROP TABLE IF EXISTS top_rated_films;
+CREATE TABLE top_rated_films(
+	title VARCHAR NOT NULL,
+	release_year SMALLINT
+);
+
+15. DROP TABLE IF EXISTS most_popular_films;
+CREATE TABLE most_popular_films(
+	title VARCHAR NOT NULL,
+	release_year SMALLINT
+);

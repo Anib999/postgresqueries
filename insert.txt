@@ -90,3 +90,17 @@ VALUES
 	('Lenovo Thinkpad', 2),
 	('iPad', 3),
 	('Kindle Fire', 3);
+
+14. INSERT INTO 
+   top_rated_films(title,release_year)
+VALUES
+   ('The Shawshank Redemption',1994),
+   ('The Godfather',1972),
+   ('12 Angry Men',1957);
+
+15. INSERT INTO 
+   most_popular_films(title,release_year)
+VALUES
+   ('An American Pickle',2020),
+   ('The Godfather',1972),
+   ('Greyhound',2020);

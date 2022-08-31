@@ -438,3 +438,29 @@ SELECT * FROM most_popular_films;
 UNION ALL
 SELECT * FROM most_popular_films
 ORDER BY title;
+
+//intersect
+66. SELECT select_list
+FROM A
+INTERSECT
+SELECT select_list
+FROM B;
+
+//returns only duplicate
+67. SELECT *
+FROM most_popular_films 
+INTERSECT
+SELECT *
+FROM top_rated_films;
+
+//except
+68. SELECT select_list
+FROM A
+EXCEPT 
+SELECT select_list
+FROM B;
+
+//returns rows from left that arenot duplicate
+69. SELECT * FROM top_rated_films
+EXCEPT 
+SELECT * FROM most_popular_films;

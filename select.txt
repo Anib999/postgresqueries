@@ -464,3 +464,131 @@ FROM B;
 69. SELECT * FROM top_rated_films
 EXCEPT 
 SELECT * FROM most_popular_films;
+
+//grouping sets
+70. SELECT
+    brand,
+    segment,
+    SUM (quantity)
+FROM
+    sales
+GROUP BY
+    brand,
+    segment;
+
+//
+71. select brand, sum(quantity) from sales group by brand
+
+72. select segment, sum(quantity) from sales group by segment
+
+//with union all
+73. SELECT
+    brand,
+    segment,
+    SUM (quantity)
+FROM
+    sales
+GROUP BY
+    brand,
+    segment
+
+UNION ALL
+
+SELECT
+    brand,
+    NULL,
+    SUM (quantity)
+FROM
+    sales
+GROUP BY
+    brand
+
+UNION ALL
+
+SELECT
+    NULL,
+    segment,
+    SUM (quantity)
+FROM
+    sales
+GROUP BY
+    segment
+
+UNION ALL
+
+SELECT
+    NULL,
+    NULL,
+    SUM (quantity)
+FROM
+    sales;
+//note: lengthy as well as performance clogger
+
+//for this we have grouping sets
+74. SELECT
+    c1,
+    c2,
+    aggregate_function(c3)
+FROM
+    table_name
+GROUP BY
+    GROUPING SETS (
+        (c1, c2),
+        (c1),
+        (c2),
+        ()
+);
+
+75. SELECT
+    brand,
+    segment,
+    SUM (quantity)
+FROM
+    sales
+GROUP BY
+    GROUPING SETS (
+        (brand, segment),
+        (brand),
+        (segment),
+        ()
+    )
+Order by brand NULLS FIRST
+
+//GROUPING  0 on yes 1 on no
+76. SELECT
+	GROUPING(brand) grouping_brand,
+	GROUPING(segment) grouping_segment,
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	GROUPING SETS (
+		(brand),
+		(segment),
+		()
+	)
+ORDER BY
+	brand,
+	segment;
+
+//HAVING 
+77. SELECT
+	GROUPING(brand) grouping_brand,
+	GROUPING(segment) grouping_segment,
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	GROUPING SETS (
+		(brand),
+		(segment),
+		()
+	)
+HAVING GROUPING(brand) = 0	
+ORDER BY
+	brand,
+	segment;

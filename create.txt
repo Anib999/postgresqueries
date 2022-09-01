@@ -82,3 +82,12 @@ CREATE TABLE most_popular_films(
 	title VARCHAR NOT NULL,
 	release_year SMALLINT
 );
+
+
+16. DROP TABLE IF EXISTS sales;
+CREATE TABLE sales (
+    brand VARCHAR NOT NULL,
+    segment VARCHAR NOT NULL,
+    quantity INT NOT NULL,
+    PRIMARY KEY (brand, segment)
+);
